@@ -1,0 +1,163 @@
+.body {
+  /* background: rgb(255, 255, 222);
+  background: linear-gradient(
+    126deg,
+    rgba(255, 255, 222, 1) 0%,
+    rgba(252, 176, 69, 1) 100%
+  ); */
+  background-color: white;
+}
+
+.glassmorph {
+  background: inherit;
+  border: 1px solid rgb(199, 199, 199);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+}
+
+.tiptap {
+  > * + * {
+    margin-top: 0.75em;
+  }
+
+  ul,
+  ol {
+    padding: 0 1rem;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    line-height: 1.1;
+  }
+
+  code {
+    background-color: rgba(#616161, 0.1);
+    color: #616161;
+  }
+
+  pre {
+    background: #0d0d0d;
+    color: #fff;
+    font-family: "JetBrainsMono", monospace;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+
+    code {
+      color: inherit;
+      padding: 0;
+      background: none;
+      font-size: 0.8rem;
+    }
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  blockquote {
+    padding-left: 1rem;
+    border-left: 2px solid rgba(#0d0d0d, 0.1);
+  }
+
+  hr {
+    border: none;
+    border-top: 2px solid rgba(#0d0d0d, 0.1);
+    margin: 2rem 0;
+  }
+}
+.btn-notesy {
+  background: black;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  transition: all 0.4s ease-in-out;
+}
+.btn-notesy:hover {
+  outline: 1px solid grey;
+  box-shadow: 0px 0px 4px 4px #ccc;
+}
+@font-face {
+  font-family: Poppins;
+  src: url("./fonts/Poppins/Poppins-Regular.ttf");
+}
+@font-face {
+  font-family: Stylish;
+  src: url("./fonts/Stylish/Stylish-Regular.ttf");
+}
+@font-face {
+  font-family: NewRocker;
+  src: url("./fonts/NewRocker/NewRocker-Regular.ttf");
+}
+@font-face {
+  font-family: AvertaStd;
+  src: url("./fonts/AvertaStd/FontsFree-Net-AvertaStandard-Regular.ttf");
+}
+.averta {
+  font-family: "AvertaStd";
+}
+.poppins {
+  font-family: "Poppins";
+}
+.stylish {
+  font-family: "Stylish";
+}
+.newrocker {
+  font-family: "NewRocker";
+}
+.grad-text {
+  font-size: 110%;
+  font-weight: 1000;
+  background: rgb(238, 9, 121);
+  background: linear-gradient(
+    236deg,
+    rgba(238, 9, 121, 1) 0%,
+    rgba(250, 141, 64, 1) 100%
+  );
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  animation: typing 2s;
+  white-space: wrap;
+  overflow: hidden;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+    clip: rect(0px, auto, auto, 0px);
+  }
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: inherit;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #efefef;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: #ddd;
+}
+.links {
+  color: black;
+  font-weight: 600;
+  transition: all 0.4s ease-in-out;
+}
+.links:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}

@@ -1,0 +1,48 @@
+{
+  "name": "notesy",
+  "version": "1.0.0",
+  "description": "Notsey is an AI-powered notes app that simplifies note-taking and boosts learning efficiency. It automatically generates notes from uploaded files, creates personalized questionnaires, and integrates proven revision techniques. With Notsey, users can study smarter and achieve better results in less time.",
+  "main": "index.js",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "dotenv": "^16.4.5"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@tiptap/extension-color": "^2.3.0",
+    "@tiptap/extension-text-style": "^2.3.0",
+    "@tiptap/pm": "^2.3.0",
+    "@tiptap/react": "^2.3.0",
+    "@tiptap/starter-kit": "^2.3.0",
+    "axios": "^1.6.8",
+    "bootstrap": "^5.3.3",
+    "jquery": "^3.7.1",
+    "react-router-dom": "^6.22.3",
+    "sweetalert2": "^11.10.7",
+    "typewriter-effect": "^2.21.0"
+  }
+}
