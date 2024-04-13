@@ -1,0 +1,21 @@
+.sidenav {
+  width: 5%;
+  height: 100%;
+  position: fixed;
+}
+.other-content {
+  width: calc(100%-5%);
+  margin-left: 5%;
+}
+.blue {
+  background: rgb(210, 236, 238);
+}
+.pink {
+  background: rgb(235, 210, 230);
+}
+.yellow {
+  background: rgb(250, 237, 203);
+}
+.orange {
+  background: rgb(253, 211, 182);
+}

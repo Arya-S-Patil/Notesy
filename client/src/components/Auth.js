@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Login_Image from "../images/login.svg";
 import { useParams } from "react-router-dom";
-import Swal from "sweetalert2/src/sweetalert2.js";
+import { jwtDecode } from "jwt-decode";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 export default function Auth() {
   const [name, setName] = useState("");
@@ -9,8 +11,11 @@ export default function Auth() {
   const [password, setPassword] = useState("");
   const [auth, setAuth] = useState(false);
   const page = useParams();
-  const uniqueId = Math.random().toString(36).substr(2, 9);
+  const navigate = useNavigate();
   useEffect(() => {
+    if (localStorage.getItem("token")) {
+      navigate("/dashboard");
+    }
     if (page === "login") {
       setAuth(true);
     } else if (page === "signup") {
@@ -18,27 +23,51 @@ export default function Auth() {
     }
   }, [page]);
 
-  async function signup() {
-    try {
-      axios.post("http://localhost:8080/login", {
+  function signup(e) {
+    e.preventDefault();
+    axios
+      .post("http://localhost:8080/signup", {
+        name: name,
         email: email,
         password: password,
-      });
-      setName("");
-      setEmail("");
-      setPassword("");
-      Swal.fire({
-        title: "Success !!",
-        text: "Account created successfully !!",
-        icon: "success",
-      });
-    } catch (error) {
-      console.error("Error:", error);
-    }
+      })
+      .then((res) => {
+        setName("");
+        setEmail("");
+        setPassword("");
+        navigate("/auth/login");
+        console.log(res);
+      })
+      .catch((err) => console.log(err));
+  }
+  function login(e) {
+    e.preventDefault();
+    axios
+      .post("http://localhost:8080/login", {
+        email: email,
+        password: password,
+      })
+      .then((res) => {
+        const token = res.data.token;
+        localStorage.setItem("token", token);
+        if (token) {
+          const decoded = jwtDecode(token);
+
+          console.log(decoded);
+          navigate("/dashboard");
+        }
+        console.log(res);
+      })
+      .catch((err) => console.log(err));
   }
 
-  function login() {
-    // Implement login functionality here
+  function signuppage() {
+    setAuth(false);
+    navigate("/auth/signup");
+  }
+  function loginpage() {
+    setAuth(true);
+    navigate("/auth/login");
   }
 
   return (
@@ -107,14 +136,14 @@ export default function Auth() {
               {auth ? (
                 <>
                   <span>Wanna Create an Account ?</span>
-                  <span className="links" onClick={() => setAuth(false)}>
+                  <span className="links" onClick={signuppage}>
                     Sign Up
                   </span>
                 </>
               ) : (
                 <>
-                  <span>Already have an account ?</span>
-                  <span className="links" onClick={() => setAuth(true)}>
+                  <span>Already have an account ? </span>
+                  <span className="links" onClick={loginpage}>
                     Login
                   </span>
                 </>

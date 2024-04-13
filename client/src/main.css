@@ -7,13 +7,15 @@
   ); */
   background-color: white;
 }
-
+.light-grey {
+  background: rgb(233, 233, 233);
+}
 .glassmorph {
-  background: inherit;
-  border: 1px solid rgb(199, 199, 199);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  border-radius: 10px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .tiptap {
@@ -156,8 +158,26 @@
   color: black;
   font-weight: 600;
   transition: all 0.4s ease-in-out;
+  cursor: pointer;
 }
 .links:hover {
   cursor: pointer;
   text-decoration: underline;
+}
+.hover-shadow {
+  box-shadow: none;
+  transition: all 0.2s ease-in-out;
+}
+.hover-shadow:hover {
+  box-shadow: 0 2px 4px 0 rgba(132, 132, 132, 0.2),
+    0 4px 12px 0 rgba(180, 180, 180, 0.19);
+  cursor: pointer;
+}
+.left-dash-container {
+  background: rgb(5, 5, 7);
+  background: linear-gradient(
+    236deg,
+    rgba(5, 5, 7, 1) 0%,
+    rgba(48, 46, 50, 1) 61%
+  );
 }
